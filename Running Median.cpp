@@ -43,20 +43,19 @@ int main()
 
         else
         {
+            bool exhausted = false;
             for (int j=0; j<array.size(); j++)
             {
                 if (ele < array.at(j))
                 {
                     array.insert(array.begin()+j,ele);
+                    exhausted = true;
                     break;
                 }
-
-
-                else
-                {
-                    array.insert(array.end()-1, ele);
-                    break;
-                }   
+            }
+            if (!exhausted)
+            {
+                array.insert(array.end(), ele);
             }
         }
 
